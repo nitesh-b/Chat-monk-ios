@@ -16,6 +16,7 @@
 		2DD0615528B094D0007A750F /* ChatMonkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0615428B094D0007A750F /* ChatMonkTests.swift */; };
 		2DD0615F28B094D0007A750F /* ChatMonkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0615E28B094D0007A750F /* ChatMonkUITests.swift */; };
 		2DD0616128B094D0007A750F /* ChatMonkUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0616028B094D0007A750F /* ChatMonkUITestsLaunchTests.swift */; };
+		2DD0616E28B097B6007A750F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2DD0616D28B097B6007A750F /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		2DD0615A28B094D0007A750F /* ChatMonkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatMonkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD0615E28B094D0007A750F /* ChatMonkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMonkUITests.swift; sourceTree = "<group>"; };
 		2DD0616028B094D0007A750F /* ChatMonkUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMonkUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2DD0616D28B097B6007A750F /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		2DD0613128B094CF007A750F = {
 			isa = PBXGroup;
 			children = (
+				2DD0616D28B097B6007A750F /* .gitignore */,
 				2DD0613C28B094CF007A750F /* ChatMonk */,
 				2DD0615328B094D0007A750F /* ChatMonkTests */,
 				2DD0615D28B094D0007A750F /* ChatMonkUITests */,
@@ -231,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DD0616E28B097B6007A750F /* .gitignore in Resources */,
 				2DD0614A28B094D0007A750F /* LaunchScreen.storyboard in Resources */,
 				2DD0614728B094D0007A750F /* Assets.xcassets in Resources */,
 				2DD0614528B094CF007A750F /* Main.storyboard in Resources */,
