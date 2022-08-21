@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PersonViewModel : BaseViewModel<Person>{
+class PersonViewModel : BaseViewModel<User>{
 
     private var personFirebaseRepository : PersonFirebaseRepository!
     override init() {

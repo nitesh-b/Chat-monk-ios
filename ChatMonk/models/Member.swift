@@ -17,11 +17,19 @@ class Member: BaseModel {
     var chatId : String
     var userId : String
     var isActive : Bool
+    var isDeleted: Bool
+    var isArchived : Bool
+    var mutedUntil: Int
+    var isTyping: Bool
     
     enum CodingKeys: String, CodingKey{
         case chatId
         case userId
         case isActive
+        case isDeleted
+        case isArchived
+        case mutedUntil
+        case isTyping
     }
     
     required init(from decoder: Decoder) throws {
@@ -29,22 +37,11 @@ class Member: BaseModel {
         chatId = try values.decodeIfPresent(String.self, forKey: .chatId) ?? ""
         userId = try values.decodeIfPresent(String.self, forKey: .userId) ?? ""
         isActive = try values.decodeIfPresent(Bool.self, forKey: .isActive) ?? false
+        isDeleted = try values.decode(Bool.self, forKey: .isDeleted)
+        isArchived = try values.decode(Bool.self, forKey: .isArchived)
+        mutedUntil = try values.decode(Int.self, forKey: .mutedUntil)
+        isTyping = try values.decode(Bool.self, forKey: .isTyping)
         try super.init(from: decoder)
     }
     
-    //    //---------------------------------------------------------------------------------------------------------------------------------------------
-    //    func update(isActive value: Bool) {
-    //
-    //        if (isActive == value) { return }
-    //        do{
-    //            let realm = try Realm()
-    //            try realm.safeWrite {
-    //                isActive = value
-    //                syncRequired = true
-    //                updatedAt = Date().timestamp()
-    //            }
-    //        }catch(let err){
-    //            NSLog("REALM Exception: %@", err.localizedDescription)
-    //        }
-    //    }
 }

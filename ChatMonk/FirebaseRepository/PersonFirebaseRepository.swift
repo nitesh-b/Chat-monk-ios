@@ -7,14 +7,14 @@
 
 import FirebaseFirestore
 
-class PersonFirebaseRepository : BaseFirebaseRepository<Person>{
+class PersonFirebaseRepository : BaseFirebaseRepository<User>{
     private var observer : FireStoreDataObserver
     init(observer: FireStoreDataObserver){
         self.observer = observer
     }
     
      func observePerson(query:  FirebaseFirestore.Query){
-        super.snapshotListener(query: query, to: Person.self, observer: observer)
+        super.snapshotListener(query: query, to: User.self, observer: observer)
     }
     
     override func removeObserver(){

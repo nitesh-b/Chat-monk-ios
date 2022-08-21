@@ -21,7 +21,6 @@ class Message: BaseModel {
     var userInitials : String
     var type : String
     var text : String
-    var incident : String
     
     var photoWidth: Int = 0
     var photoHeight: Int = 0
@@ -38,14 +37,12 @@ class Message: BaseModel {
     var isDeleted  : Bool
     
     enum CodingKeys: String, CodingKey {
-        
         case chatId
         case userId
         case userFullname
         case userInitials
         case type
         case text
-        case incident
         
         case photoWidth
         case photoHeight
@@ -70,7 +67,6 @@ class Message: BaseModel {
         userInitials = try values.decodeIfPresent(String.self, forKey: .userInitials) ?? ""
         type = try values.decodeIfPresent(String.self, forKey: .type) ?? ""
         text = try values.decodeIfPresent(String.self, forKey: .text) ?? ""
-        incident = try values.decodeIfPresent(String.self, forKey: .incident) ?? ""
         
         photoWidth = try values.decodeIfPresent(Int.self, forKey: .photoWidth) ?? 0
         photoHeight = try values.decodeIfPresent(Int.self, forKey: .photoHeight) ?? 0
@@ -87,92 +83,4 @@ class Message: BaseModel {
         isDeleted = try values.decodeIfPresent(Bool.self, forKey: .isDeleted) ?? false
         try super.init(from: decoder)
     }
-    
-    
-    
-    //---------------------------------------------------------------------------------------------------------------------------------------------
-    //    override class func encryptedProperties() -> [String] {
-    //
-    //        return ["text"]
-    //    }
-    //
-    //    // MARK: -
-    //    //---------------------------------------------------------------------------------------------------------------------------------------------
-    //    class func lastUpdatedAt(_ chatId: String) -> Int {
-    //        do{
-    //            let realm = try Realm()
-    //            let predicate = NSPredicate(format: "chatId == %@", chatId)
-    //            let object = realm.objects(Message.self).filter(predicate).sorted(byKeyPath: "updatedAt").last
-    //            return object?.updatedAt ?? 0
-    //        }catch(let err){
-    //            NSLog("REALM Exception: %@", err.localizedDescription)
-    //            return 0
-    //        }
-    //
-    //
-    //    }
-    //
-    //
-    //    class func lastScrolledMessageAt(_ chatId: String) -> Int {
-    //        do{
-    //            let realm = try Realm()
-    //            let predicate = NSPredicate(format: "chatId == %@", chatId)
-    //            let object = realm.objects(Message.self).filter(predicate).sorted(byKeyPath: "updatedAt", ascending: true).first
-    //            return object?.updatedAt ?? 0
-    //        }catch(let err){
-    //            NSLog("REALM Exception: %@", err.localizedDescription)
-    //            return 0
-    //        }
-    //
-    //
-    //    }
-    //    // MARK: -
-    //    //---------------------------------------------------------------------------------------------------------------------------------------------
-    //    func update(isMediaQueued value: Bool) {
-    //
-    //        if (isMediaQueued == value) { return }
-    //        do{
-    //            let realm = try Realm()
-    //            try realm.safeWrite {
-    //                isMediaQueued = value
-    //                syncRequired = true
-    //                updatedAt = Date().timestamp()
-    //            }
-    //        }catch(let err){
-    //            NSLog("REALM Exception: %@", err.localizedDescription)
-    //        }
-    //    }
-    //
-    //    //---------------------------------------------------------------------------------------------------------------------------------------------
-    //    func update(isMediaFailed value: Bool) {
-    //
-    //        if (isMediaFailed == value) { return }
-    //        do{
-    //            let realm = try Realm()
-    //            try realm.safeWrite {
-    //                isMediaFailed = value
-    //                syncRequired = true
-    //                updatedAt = Date().timestamp()
-    //            }
-    //        }catch(let err){
-    //            NSLog("REALM Exception: %@", err.localizedDescription)
-    //        }
-    //    }
-    //
-    //    //---------------------------------------------------------------------------------------------------------------------------------------------
-    //    func update(isDeleted value: Bool) {
-    //
-    //        if (isDeleted == value) { return }
-    //
-    //        do{
-    //            let realm = try Realm()
-    //            try realm.safeWrite {
-    //                isDeleted = value
-    //                syncRequired = true
-    //                updatedAt = Date().timestamp()
-    //            }
-    //        }catch(let err){
-    //            NSLog("REALM Exception: %@", err.localizedDescription)
-    //        }
-    //    }
 }
